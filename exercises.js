@@ -1,4 +1,5 @@
-const full_name = 'Gustavo Meireles';
+// My full name
+const full_name = 'Gustavo Tavares Proença Meireles';
 
 const exercise_1 = function(items) {
     let result = [];
@@ -80,6 +81,41 @@ const exercise_5 = function(items) {
         }
     }
 
+    return result;
+}
+
+const exercise_6 = function(items) {
+    let result = [];
+
+    const countVowels = (str) => {
+        let count = 0;
+        const vowels = ['a', 'e', 'i', 'o', 'u'];
+
+        for (let i = 0; i < str.length; i++) {
+            const letter = str.charAt(i);
+
+            for (let j = 0; j < vowels.length; j++) {
+                const vowel = vowels[j];
+                if (letter === vowel) {
+                    count++;
+                }
+            }
+        }
+
+        return count;
+    };
+
+    for (let i = 0; i < items.length; i++) {
+        const element = items[i];
+        result.push(countVowels(element));
+    }
+
+    return result;
+}
+
+const exercise_7 = (items) => {
+    let result;
+    // code here
     return result;
 }
 
