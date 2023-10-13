@@ -113,10 +113,72 @@ const exercise_6 = function(items) {
     return result;
 }
 
-const exercise_7 = (items) => {
+const exercise_7 = (desserts) => {
     let result;
-    // code here
+    result = desserts.split(",");
+
+    result.forEach((element, index) => {
+        result[index] = element.replaceAll(' ', '');
+    });
+
     return result;
+}
+
+const exercise_8 = (str) => {
+    let result = [];
+
+    result = str.split("|");
+    for (let i = 0; i < result.length; i++) {
+        let element = result[i];
+        element = element.replaceAll(" ", "");
+    }
+
+    for (let i = 0; i < result.length; i++) {
+        const element = result[i];
+        if (element === '') {
+            result.splice(i, 1);
+
+        }
+    }
+
+    result = result.sort();
+
+
+    return result;
+}
+
+const exercise_9 = (numbers) => {
+    let result = 0
+
+    for (let i = 0; i < numbers.length; i++) {
+        const element = numbers[i];
+        if ((element % 2) === 0) {
+            result += element;
+        }
+    }
+
+    return result;
+}
+
+const exercise_10 = (numbers) => {
+    let result = 0
+
+    for (let i = 0; i < numbers.length; i++) {
+        const element = numbers[i];
+        if ((element % 2) !== 0) {
+            result += element;
+        }
+    }
+
+    if ((result % 2) !== 0) {
+        result += 30;
+    }
+
+    return result;
+}
+
+const exercise_11 = () => {
+
 }
 
 const exercise_16 = function() {
