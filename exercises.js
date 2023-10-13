@@ -177,11 +177,139 @@ const exercise_10 = (numbers) => {
     return result;
 }
 
-const exercise_11 = () => {
+const exercise_11 = (numbers) => {
+    result = {
+        "even": 0,
+        "odd": 0,
+    }
 
+    const getEven = (arr) => {
+        let sum = 0
+
+        for (let i = 0; i < arr.length; i++) {
+            const element = arr[i];
+            if ((element % 2) === 0) {
+                sum++;
+            }
+        }
+
+        return sum;
+    }
+
+    const getOdd = (arr) => {
+        let sum = 0
+
+        for (let i = 0; i < arr.length; i++) {
+            const element = arr[i];
+            if ((element % 2) !== 0) {
+                sum++;
+            }
+        }
+
+        return sum;
+    }
+
+    result["even"] = getEven(numbers);
+    result["odd"] = getOdd(numbers);
+
+    return result;
 }
 
-const exercise_16 = function() {
+const exercise_12 = (items) => {
+    result = {
+        "even": 0,
+        "odd": 0,
+    }
 
-    return car_mock_data
+    const getEven = (arr) => {
+        let sum = 0
+
+        for (let i = 0; i < arr.length; i++) {
+            const element = arr[i];
+            if ((element % 2) === 0) {
+                sum += element;
+            }
+        }
+
+        return sum;
+    }
+
+    const getOdd = (arr) => {
+        let sum = 0
+
+        for (let i = 0; i < arr.length; i++) {
+            const element = arr[i];
+            if ((element % 2) !== 0) {
+                sum += element;
+            }
+        }
+
+        return sum;
+    }
+
+    result["even"] = getEven(items);
+    result["odd"] = getOdd(items);
+
+    return result;
+}
+
+const exercise_13 = (items) => {
+    let result = [];
+
+    for (let i = 0; i < items.length; i++) {
+        const element = items[i];
+        result.push(element);
+    }
+
+    items.reverse();
+
+    for (let i = 0; i < items.length; i++) {
+        const element = items[i];
+        result.push(element);
+    }
+
+    return result;
+}
+
+const exercise_14 = (items) => {
+    let result = [];
+
+    for (let i = 0; i < items.length; i++) {
+        const element = items[i];
+        if (result.includes(element)){
+            continue;
+        } else {
+            result.push(element);
+        }
+    }
+
+    return result;
+}
+
+const exercise_15 = (items) => {
+    let result = items
+    let replaced = [];
+
+    const replacers = {
+        "Roses": "Cars",
+        "violets": "bikes",
+        "Flowers": "Vehicles",
+        "nice": "fast"
+    }
+
+    replaced = Object.keys(replacers);
+
+    // Why do some functions return references and
+    // others return copies? It seems random
+    for (let i = 0; i < replaced.length; i++) {
+        const element = replaced[i];
+        result = result.replaceAll(element, replacers[element]);
+    }
+
+    return result;
+}
+
+const exercise_16 = function(car_mock_data) {
+
+    return car_mock_data;
 };
