@@ -276,7 +276,7 @@ const exercise_14 = (items) => {
 
     for (let i = 0; i < items.length; i++) {
         const element = items[i];
-        if (result.includes(element)){
+        if (result.includes(element)) {
             continue;
         } else {
             result.push(element);
@@ -310,6 +310,36 @@ const exercise_15 = (items) => {
 }
 
 const exercise_16 = function(car_mock_data) {
+    let result = "";
+    let makes = [];
 
-    return car_mock_data;
-};
+    for (let i = 0; i < car_mock_data.length; i++) {
+        const element = car_mock_data[i]["make"];
+        if (!makes.includes(element)) {
+            makes.push(element);
+        }
+    }
+
+    result = makes.join(",");
+
+    return result;
+}
+// console.log(exercise_16(
+//     car_mock_data = [
+//         { "make": "Honda", "model": "Civic" },
+//         { "make": "Mazda", "model": "MX-5" },
+//         { "make": "Infiniti", "model": "Q50" },
+//         { "make": "Chevrolet", "model": "Cruze" },
+//         { "make": "Toyota", "model": "Camry" },
+//         { "make": "Honda", "model": "Civic" },
+//         { "make": "Maserati", "model": "Ghibli" },
+//         { "make": "Honda", "model": "Civic" },
+//         { "make": "Suzuki", "model": "Swift" },
+//         { "make": "GMC", "model": "Sierra" },
+//         { "make": "Isuzu", "model": "Rodeo" },
+//         { "make": "Acura", "model": "MDX" },
+//         { "make": "Honda", "model": "Civic" },
+//         { "make": "Pontiac", "model": "Grand Am" },
+//         { "make": "Austin", "model": "Mini" },
+//     ]
+// ));
