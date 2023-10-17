@@ -15,3 +15,5 @@ var car_mock_data =
 {"make":"Acura","model":"Legend","year":1987},
 {"make":"Pontiac","model":"Safari","year":1987},
 {"make":"Austin","model":"Mini","year":1963}];
+
+export { car_mock_data }

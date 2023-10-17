@@ -1,33 +1,7 @@
 // My full name
 const full_name = 'Gustavo Tavares Proença Meireles';
 
-const carData = [
-    { "make": "Honda", "model": "Civic", "year": 2022 },
-    { "make": "Mazda", "model": "MX-5", "year": 2021 },
-    { "make": "Infiniti", "model": "Q50", "year": 2020 },
-    { "make": "Chevrolet", "model": "Cruze", "year": 2022 },
-    { "make": "Toyota", "model": "Camry", "year": 2023 },
-    { "make": "Honda", "model": "Civic", "year": 2020 },
-    { "make": "Maserati", "model": "Ghibli", "year": 2021 },
-    { "make": "Honda", "model": "Civic", "year": 2022 },
-    { "make": "Suzuki", "model": "Swift", "year": 2022 },
-    { "make": "GMC", "model": "Sierra", "year": 2021 },
-    { "make": "Isuzu", "model": "Rodeo", "year": 2019 },
-    { "make": "Acura", "model": "MDX", "year": 2020 },
-    { "make": "Honda", "model": "Civic", "year": 2021 },
-    { "make": "Pontiac", "model": "Grand Am", "year": 2018 },
-    { "make": "Austin", "model": "Mini", "year": 2021 },
-    { "make": "Ford", "model": "Mustang", "year": 2022 },
-    { "make": "Nissan", "model": "Altima", "year": 2023 },
-    { "make": "Tesla", "model": "Model 3", "year": 2023 },
-    { "make": "Subaru", "model": "Outback", "year": 2022 },
-    { "make": "Volkswagen", "model": "Golf", "year": 2021 },
-    { "make": "BMW", "model": "X5", "year": 2023 },
-    { "make": "Ford", "model": "F-150", "year": 2023 },
-    { "make": "Audi", "model": "A4", "year": 2022 },
-    { "make": "Jeep", "model": "Wrangler", "year": 2022 },
-    { "make": "Kia", "model": "Sorento", "year": 2023 },
-];
+import { car_mock_data } from './mock-data.js'
 
 const exercise_1 = function(items) {
     let result = [];
@@ -358,9 +332,32 @@ const exercise_17 = (car_mock_data) => {
     for (let i = 0; i < car_mock_data.length; i++) {
         const element = car_mock_data[i]["year"];
 
-        if (!result.includes(element)) {
+        if (result[element])
+            result[element]++;
+        else
+            result[element] = 1;
+    }
+
+    return result;
+}
+
+const exercise_18 = (car_mock_data) => {
+    let result = {};
+
+    for (let i = 0; i < car_mock_data.length; i++) {
+        const element = car_mock_data[i]["make"];
+
+        if (car_mock_data[i]["year"] < 2004) {
+            if (result[element])
+                result[element]++;
+            else
+                result[element] = 1;
         }
     }
 
     return result;
 }
+
+const exercise_19 = () => {
+}
+console.log(exercise_19());
